@@ -1,0 +1,9 @@
+{{cookiecutter.project_name}}/data/*
+
+*.pyc
+__pycache__
+*.egg-info
+
+venv
+
+notebooks/00_experiments.ipynb
