@@ -21,5 +21,19 @@ if "{{cookiecutter.environment}}" == "virtualenv":
     subprocess.run(["venv/bin/pip", "install", "-e", ".[dev]"], check=True)
 elif "{{cookiecutter.environment}}" == "conda":
     subprocess.run(
-        ["conda", "create", "-n", "{{cookiecutter.repo_name}}_env"], check=True
+        ["conda", "create", "-n", "{{cookiecutter.repo_name}}", "python"],
+        check=True,
+    )
+    subprocess.run(
+        [
+            "conda",
+            "run",
+            "-n",
+            "{{cookiecutter.repo_name}}",
+            "pip",
+            "install",
+            "-e",
+            ".[dev]",
+        ],
+        check=True,
     )
