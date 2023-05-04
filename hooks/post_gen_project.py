@@ -16,6 +16,10 @@ if "{{cookiecutter.remote_url}}":
     subprocess.run(["git", "remote", "-v"], check=True)
     subprocess.run(["git", "push", "origin", "main"], check=True)
 
-if "{{cookiecutter.create_venv}}" == "yes":
+if "{{cookiecutter.environment}}" == "virtualenv":
     subprocess.run(["python", "-m", "venv", "venv"], check=True)
     subprocess.run(["venv/bin/pip", "install", "-e", ".[dev]"], check=True)
+elif "{{cookiecutter.environment}}" == "conda":
+    subprocess.run(
+        ["conda", "create", "-n", "{{cookiecutter.repo_name}}_env"], check=True
+    )

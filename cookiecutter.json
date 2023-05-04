@@ -4,8 +4,9 @@
     "author": "Moritz Hesche",
     "email": "mo.hesche@gmail.com",
     "remote_url": "",
-    "create_venv": [
-        "yes",
-        "no"
+    "environment": [
+        "none",
+        "conda",
+        "virtualenv"
     ]
 }
